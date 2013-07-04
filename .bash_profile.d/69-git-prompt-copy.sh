@@ -373,8 +373,8 @@ __git_ps1 ()
     __git__ps__info[rebase]=$r
     __git__ps__info[upstream]=$p
     __git__ps__info[branchplain]=$(echo $b | tr -d "()" )
-    __git__ps__info[branchstring]="${__git__ps__info[branchplain]##refs/heads/}"
-    __git__ps__info[remote]=$(echo "${__git__ps__info[branchstring]}" | sed -nr "s|(remotes.*)/.*$|\1| p")
+    __git__ps__info[branchstring]=$(echo "${__git__ps__info[branchplain]##refs/heads/}" | sed -nr "s|(remotes.*/)?(.*)$|\2| p")
+    __git__ps__info[remote]=""
     local f="$w$i$s$u"
     if [ $pcmode = yes ]; then
       local gitstring=
