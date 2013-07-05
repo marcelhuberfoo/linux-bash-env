@@ -1,8 +1,8 @@
 GIT_PS1_SHOWCOLORHINTS=         # not needed, managed below
-GIT_PS1_SHOWDIRTYSTATE=1        # unstaged *, staged +
+GIT_PS1_SHOWDIRTYSTATE=1        # unstaged: *, staged: +, new repo: #
 GIT_PS1_SHOWSTASHSTATE=1        # $
 GIT_PS1_SHOWUNTRACKEDFILES=     # %
-GIT_PS1_SHOWUPSTREAM=auto       # identical =, behind <, ahead >, diverged <>
+GIT_PS1_SHOWUPSTREAM=auto       # identical: =, behind: <, ahead: >, diverged: <>
 GIT_PS1_DESCRIBE_STYLE=branch
 
 NORMALCOLOR="${LIGHTGRAY}"
@@ -12,7 +12,7 @@ LBRACKET="\$(test -n \"\${__git__ps__info[branchstring]}\" && echo \"${NORMALCOL
 RBRACKET="\$(test -n \"\${__git__ps__info[branchstring]}\" && echo \"${NORMALCOLOR})\")"
 BRANCHCOLOR="\$(test \"\${__git__ps__info[detached]}\" = \"no\" && echo \"${NORMALCOLOR}\" || echo \"${BOLDRED}\")"
 DIRTYCOLOR="\$(test -n \"\${__git__ps__info[dirty]}\" && echo \"${BOLDRED}\")"
-INDEXCOLOR="\$(test \"\${__git__ps__info[index]}\" = \"+\" && echo \"${BOLDGREEN}\" || echo \"${NORMALCOLOR}\")"
+INDEXCOLOR="\$(test \"\${__git__ps__info[index]}\" = \"+\" && echo \"${BOLDGREEN}\" || test \"\${__git__ps__info[index]}\" = \"#\" && echo \"${BOLDRED}\" || echo \"${NORMALCOLOR}\")"
 STASHEDCOLOR="\$(test -n \"\${__git__ps__info[stashed]}\" && echo \"${BOLDGREEN}\")"
 UNTRACKEDCOLOR="\$(test -n \"\${__git__ps__info[untracked]}\" && echo \"${LIGHTRED}\")"
 REBASECOLOR="\$(test -n \"\${__git__ps__info[rebase]}\" && echo \"${BOLDRED}\")"
