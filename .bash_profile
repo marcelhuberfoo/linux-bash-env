@@ -1,7 +1,6 @@
 #
 # ~/.bash_profile
 #
-echo ".bash_profile"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
