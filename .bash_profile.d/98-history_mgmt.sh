@@ -3,8 +3,8 @@ _HISTREDUCEINTERPRETER_=python2
 _HISTREDUCELOCATION_=~/bin/reduceHist.py
 _HISTFILEDEFAULT_=~/.bash_history
 HISTTIMEFORMAT='%Y%m%d%H%M%S: '
-HISTSIZE=50000
-HISTCONTROL=ignorespace:ignoredups:erasedups # colon-separated list [ignorespace:ignoredups:erasedups]
+HISTSIZE=80000
+HISTCONTROL=ignorespace:ignoredups # colon-separated list [ignorespace:ignoredups:erasedups]
 TTY_NAME=`tty|sed -e 's|/dev/||' -e 's|/||'`
 
 createHistory() {

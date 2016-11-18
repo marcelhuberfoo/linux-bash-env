@@ -20,11 +20,18 @@
 [alias]
 	hist = log --pretty=format:\"%h %ad |%d %s [%an]\" --graph --date=short
 	s = status --short --branch --ignore-submodules=untracked
-	changelog = log --date=short --pretty=format:\"%cd %cn <%ce>%n%n     %d%n%w(79,6,6)%s%n%+b%n\"
+	changelog = log --date=short --pretty=format:\"%cd %cn <%ce>%n%n %d%n%w(79,6,6)%s%n%+b%n\"
+	changes = log --date=short --pretty=format:\"%d%n- %cd %cn%n%n%w(79,4,4)%s%n%+b%n\"
+	logg = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 [log]
 	decorate = short
 [branch]
 	autosetuprebase = always
 [push]
 	default = tracking
-
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	helper = store

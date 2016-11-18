@@ -34,12 +34,13 @@ if __name__ == "__main__":
   entries={}
   processFilesDict(entries, fileinput.input(files=options.files))
   entriesSortedByLine=sorted(entries.viewitems(), cmp=lambda x,y: cmp(x[1]['line'], y[1]['line']))
+  entriesSortedByTimestamp=sorted(entries.viewitems(), cmp=lambda x,y: cmp(x[1]['timestamp'], y[1]['timestamp']))
   def writeToFileObject(fileobject, entries):
     for command, attrs in entries:
       print >> fileobject, "#%s\n%s" % (attrs['timestamp'], command),
   if options.outputfile:
     with open(options.outputfile, 'w+') as output:
-      writeToFileObject(output, entriesSortedByLine)
+      writeToFileObject(output, entriesSortedByTimestamp)
   else:
-    writeToFileObject(sys.stdout, entriesSortedByLine)
+    writeToFileObject(sys.stdout, entriesSortedByTimestamp)
 
