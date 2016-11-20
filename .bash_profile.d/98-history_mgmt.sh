@@ -5,7 +5,7 @@ _HISTFILEDEFAULT_=~/.bash_history
 HISTTIMEFORMAT='%Y%m%d%H%M%S: '
 HISTSIZE=80000
 HISTCONTROL=ignorespace:ignoredups # colon-separated list [ignorespace:ignoredups:erasedups]
-TTY_NAME=`tty|sed -e 's|/dev/||' -e 's|/||'`
+TTY_NAME=$(tty -s && tty |sed -e 's|/dev/||' -e 's|/||' || echo $$)
 
 createHistory() {
   if [ -n "${_HISTFILELOCATION_}" -a ! -d "${_HISTFILELOCATION_}" ]; then

@@ -1,14 +1,14 @@
 unset __bash__prompt__line__
 declare -a __bash__prompt__line__
 __bash__prompt__line__=(
-[10]="${BOLDYELLOW}# "
+[10]="${LIGHTYELLOW}# "
 [20]="${LIGHTYELLOW}(\!/\#) "
 [30]="${BOLDMAGENTA}\d \t "
 [40]="${USERCOLOR}\u${LIGHTGRAY}@${LIGHTGRAY}\h "
 [50]="\$([ -n \"\$rvm_path\" ] && echo \"${BOLDBLUE}rb:${LIGHTGREEN}\$(\$rvm_path/bin/rvm-prompt) \")"
 [60]="\$([ -n \"\$VIRTUAL_ENV\" ] && echo \"${BOLDBLUE}py:${BOLDMAGENTA}\$(basename \"\${VIRTUAL_ENV}\")${LIGHTMAGENTA}(\$(python -V 2>&1 >/dev/null | cut -d' ' -f2)) \")"
 [70]="\$([ \$rc -eq 0 ] && echo \"${SMILEY} \" || echo \"${FROWNY} ${LIGHTRED}(\$rc) \")"
-[80]="\\n${BOLDYELLOW}\w "
+[80]="\\n${LIGHTYELLOW}\w "
 [90]="${USERCOLOR}\\\$"
 [1000]="${NORMALCOLOR} "
 )

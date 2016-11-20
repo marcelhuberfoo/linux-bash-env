@@ -1,1 +1,1 @@
-[ -n "$(which archey3)" ] && archey3
+[ -n "$(type -fP archey3)" ] && archey3
