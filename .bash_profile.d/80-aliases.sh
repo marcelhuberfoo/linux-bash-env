@@ -5,3 +5,6 @@ alias pst='ps -FeH | less'
     alias topd="docker stats \$(docker ps --format '{{.Names}}')"
   }
 }
+alias jctln >/dev/null 2>&1 || {
+  alias jctln='SYSTEMD_LESS=FRXMK journalctl --full --priority notice..alert'
+}
