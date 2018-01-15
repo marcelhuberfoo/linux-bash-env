@@ -1,7 +1,1 @@
-*.ps diff=ps
-*.jpg diff=img
-*.png diff=img
-*.odt diff=odf
-*.odf diff=odf
-*.odp diff=odf
-*.crypt.* filter=gitcrypt diff=gitcrypt
+fooCloud/fooLABS/homedir/.gitattributes
