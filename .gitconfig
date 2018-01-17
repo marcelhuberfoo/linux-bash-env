@@ -1,1 +1,34 @@
-fooCloud/fooLABS/homedir/.gitconfig.hsr
+[user]
+	name = Marcel Huber
+	email = marcelhuberfoo@gmail.com
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[help]
+	autocorrect = 4
+[merge]
+	keepBackup = false
+	tool = vimdiff
+[diff]
+	mnemonicprefix = true
+	tool = vimdiff
+[alias]
+	hist = log --pretty=format:\"%h %ad |%d %s [%an]\" --graph --date=short
+	s = status --short --branch --ignore-submodules=untracked
+	changelog = log --date=short --pretty=format:\"%cd %cn <%ce>%n%n     %d%n%w(79,6,6)%s%n%+b%n\"
+[log]
+	decorate = short
+[branch]
+	autosetuprebase = always
+[push]
+	default = tracking
+
+[credential]
+	helper = cache --timeout 36000
+[credential "https://git.hsr.ch"]
+	username = m1huber

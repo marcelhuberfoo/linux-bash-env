@@ -13,7 +13,7 @@ export FORCE_GPG_AGENT=y
 [ -r "${HOME}/.bash_profile.`hostname`" ] && . ${HOME}/.bash_profile.`hostname`
 
 for f in ${HOME}/.bash_profile.d/*.sh; do
-  [ -r "$f" ] && . "$f"
+	[ -r "$f" ] && . "$f" || ( echo $f; true)
 done
 unset f
 
